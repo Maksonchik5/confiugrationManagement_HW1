@@ -1,0 +1,9 @@
+ls
+cd subdir
+ls
+cd ..
+cp first.txt subdir/first.txt
+cd subdir
+ls
+cd ..
+exit
