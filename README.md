@@ -1,31 +1,18 @@
-# Virtual File System Shell Emulator
-
-This project provides a Python-based shell emulator that operates on a virtual file system within a `.tar` archive. The shell supports basic file system operations such as listing directory contents, changing directories, copying files, and running startup scripts.
-
-## Features
-
-- **List directory contents** (`ls`)
-- **Change directory** (`cd`)
-- **Copy files** within the virtual file system (`cp`)
-- **Execute commands from a startup script** to initialize the virtual environment
-- **Clear screen** (`clear`)
-- **Exit** the shell (`exit`)
-
-## File Structure
-
-- `VirtualFileSystem`: The core class for managing file operations within a `.tar` archive.
-- `ShellEmulator`: Provides a command-line interface for interacting with the virtual file system.
-- `conf.json`: Configuration file for initializing the shell emulator.
-- `startup_script`: Script with predefined commands that the shell will execute at startup.
-
-## Configuration
-
-The configuration is managed through a JSON file (`conf.json`) with the following structure:
-
-```json
-{
-    "username": "maksim",
-    "tar_path": "/path/to/your/tar_file.tar",
-    "start_script": "/path/to/your/startup_script"
-}
-
+Разработать эмулятор для языка оболочки ОС. Необходимо сделать работу 
+эмулятора как можно более похожей на сеанс shell в UNIX-подобной ОС. 
+Эмулятор должен запускаться из реальной командной строки, а файл с 
+виртуальной файловой системой не нужно распаковывать у пользователя. 
+Эмулятор принимает образ виртуальной файловой системы в виде файла формата 
+tar. Эмулятор должен работать в режиме CLI. 
+Конфигурационный файл имеет формат json и содержит: 
+• Имя пользователя для показа в приглашении к вводу. 
+• Путь к архиву виртуальной файловой системы. 
+• Путь к стартовому скрипту. 
+Стартовый скрипт служит для начального выполнения заданного списка 
+команд из файла. 
+Необходимо поддержать в эмуляторе команды ls, cd и exit, а также 
+следующие команды: 
+1. clear. 
+2. cp. 
+Все функции эмулятора должны быть покрыты тестами, а для каждой из 
+поддерживаемых команд необходимо написать 2 теста. 
